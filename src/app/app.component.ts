@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'aft-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'angular-firebase-tasks';
+
+@Injectable()
+export class AppComponent implements OnInit {
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+  }
+
 }

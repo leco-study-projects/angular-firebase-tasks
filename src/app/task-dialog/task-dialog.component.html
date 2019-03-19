@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>{{dialogTitle}}</h1>
+<mat-dialog-content>
+  <mat-form-field>
+    <input
+      type="text"
+      [(ngModel)]="task.title"
+      required
+      minlength="3"
+      #ipTitle=ngModel
+      (keyup.enter)="onSave()"
+      matInput>
+  </mat-form-field>
+  <p *ngIf="ipTitle.invalid && (ipTitle.dirty)" class="mat-error">
+    Campo obrigatório e deve ser maior que 3!
+  </p>
+</mat-dialog-content>
+<mat-dialog-content></mat-dialog-content>
+<mat-dialog-content>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button [disabled]="ipTitle.invalid" (click)="onSave()">Save</button>
+</mat-dialog-content>
